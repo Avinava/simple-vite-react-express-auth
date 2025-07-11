@@ -79,43 +79,58 @@ const Login = () => {
 
   return (
     <>
-      <Container component="main" maxWidth="sm">
-        <Fade in timeout={800}>
-          <Box
-            sx={{
-              marginTop: 8,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          py: 8,
+        }}
+      >
+        <Container component="main" maxWidth="sm">
+          <Fade in timeout={800}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
             <Paper 
-              elevation={8} 
+              elevation={24} 
               sx={{ 
-                padding: 4, 
+                padding: 5, 
                 width: '100%',
-                borderRadius: 3,
-                background: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%)',
+                borderRadius: 4,
+                background: '#ffffff',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
               }}
             >
               <Box sx={{ textAlign: 'center', mb: 3 }}>
                 <Box
                   sx={{
                     display: 'inline-flex',
-                    p: 2,
-                    borderRadius: '50%',
-                    bgcolor: 'primary.main',
+                    p: 3,
+                    borderRadius: 3,
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                     color: '#ffffff',
-                    mb: 2,
+                    mb: 3,
+                    boxShadow: '0 10px 25px rgba(102, 126, 234, 0.3)',
                   }}
                 >
-                  <LoginIcon sx={{ fontSize: 32 }} />
+                  <LoginIcon sx={{ fontSize: 40 }} />
                 </Box>
-                <Typography component="h1" variant="h4" fontWeight="bold" gutterBottom>
+                <Typography component="h1" variant="h3" fontWeight="800" gutterBottom sx={{ color: 'text.primary' }}>
                   Welcome Back
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="h6" color="text.secondary" sx={{ mb: 1 }}>
                   Sign in to your account to continue
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Don't have an account? <Link component={RouterLink} to="/register" sx={{ fontWeight: 600, textDecoration: 'none' }}>Create one here</Link>
                 </Typography>
               </Box>
               
@@ -183,35 +198,58 @@ const Login = () => {
                   variant="contained"
                   size="large"
                   sx={{ 
-                    mt: 3, 
-                    mb: 2,
-                    py: 1.5,
-                    borderRadius: 2,
-                    background: 'linear-gradient(45deg, #2196F3 30%, #21CBF3 90%)',
-                    boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
+                    mt: 4, 
+                    mb: 3,
+                    py: 2,
+                    borderRadius: 3,
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    boxShadow: '0 8px 25px rgba(102, 126, 234, 0.3)',
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 12px 35px rgba(102, 126, 234, 0.4)',
+                    },
+                    '&:disabled': {
+                      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                      opacity: 0.7,
+                    }
                   }}
                   disabled={loading}
                 >
                   {loading ? 'Signing In...' : 'Sign In'}
                 </Button>
 
-                <Divider sx={{ my: 3 }}>
-                  <Chip label="or continue with" size="small" />
+                <Divider sx={{ my: 4 }}>
+                  <Chip 
+                    label="or continue with" 
+                    size="small" 
+                    sx={{ 
+                      bgcolor: 'grey.100',
+                      color: 'text.secondary',
+                      fontWeight: 500,
+                    }}
+                  />
                 </Divider>
 
-                <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
+                <Box sx={{ display: 'flex', gap: 2, mb: 4 }}>
                   <Button
                     fullWidth
                     variant="outlined"
                     startIcon={<GoogleIcon />}
                     sx={{ 
-                      borderRadius: 2,
-                      py: 1.5,
+                      borderRadius: 3,
+                      py: 2,
                       borderColor: '#db4437',
                       color: '#db4437',
+                      fontWeight: 600,
+                      transition: 'all 0.2s ease-in-out',
                       '&:hover': {
                         borderColor: '#db4437',
-                        bgcolor: 'rgba(219, 68, 55, 0.04)',
+                        bgcolor: 'rgba(219, 68, 55, 0.08)',
+                        transform: 'translateY(-1px)',
+                        boxShadow: '0 4px 12px rgba(219, 68, 55, 0.2)',
                       }
                     }}
                   >
@@ -222,13 +260,17 @@ const Login = () => {
                     variant="outlined"
                     startIcon={<GitHubIcon />}
                     sx={{ 
-                      borderRadius: 2,
-                      py: 1.5,
+                      borderRadius: 3,
+                      py: 2,
                       borderColor: '#333',
                       color: '#333',
+                      fontWeight: 600,
+                      transition: 'all 0.2s ease-in-out',
                       '&:hover': {
                         borderColor: '#333',
-                        bgcolor: 'rgba(51, 51, 51, 0.04)',
+                        bgcolor: 'rgba(51, 51, 51, 0.08)',
+                        transform: 'translateY(-1px)',
+                        boxShadow: '0 4px 12px rgba(51, 51, 51, 0.2)',
                       }
                     }}
                   >
@@ -271,6 +313,7 @@ const Login = () => {
           </Box>
         </Fade>
       </Container>
+    </Box>
 
       <SuccessMessage
         open={showSuccess}

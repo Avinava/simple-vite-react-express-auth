@@ -120,43 +120,58 @@ const Register = () => {
 
   return (
     <>
-      <Container component="main" maxWidth="md">
-        <Fade in timeout={800}>
-          <Box
-            sx={{
-              marginTop: 6,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          py: 8,
+        }}
+      >
+        <Container component="main" maxWidth="md">
+          <Fade in timeout={800}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
             <Paper 
-              elevation={8} 
+              elevation={24} 
               sx={{ 
-                padding: 4, 
+                padding: 5, 
                 width: '100%',
-                borderRadius: 3,
-                background: 'linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%)',
+                borderRadius: 4,
+                background: '#ffffff',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
               }}
             >
               <Box sx={{ textAlign: 'center', mb: 3 }}>
                 <Box
                   sx={{
                     display: 'inline-flex',
-                    p: 2,
-                    borderRadius: '50%',
-                    bgcolor: 'success.main',
+                    p: 3,
+                    borderRadius: 3,
+                    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                     color: '#ffffff',
-                    mb: 2,
+                    mb: 3,
+                    boxShadow: '0 10px 25px rgba(16, 185, 129, 0.3)',
                   }}
                 >
-                  <PersonAddIcon sx={{ fontSize: 32 }} />
+                  <PersonAddIcon sx={{ fontSize: 40 }} />
                 </Box>
-                <Typography component="h1" variant="h4" fontWeight="bold" gutterBottom>
+                <Typography component="h1" variant="h3" fontWeight="800" gutterBottom sx={{ color: 'text.primary' }}>
                   Create Account
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="h6" color="text.secondary" sx={{ mb: 1 }}>
                   Join thousands of users building amazing things
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Already have an account? <Link component={RouterLink} to="/login" sx={{ fontWeight: 600, textDecoration: 'none' }}>Sign in here</Link>
                 </Typography>
               </Box>
               
@@ -321,12 +336,23 @@ const Register = () => {
                   variant="contained"
                   size="large"
                   sx={{ 
-                    mt: 3, 
-                    mb: 2,
-                    py: 1.5,
-                    borderRadius: 2,
-                    background: 'linear-gradient(45deg, #4CAF50 30%, #8BC34A 90%)',
-                    boxShadow: '0 3px 5px 2px rgba(76, 175, 80, .3)',
+                    mt: 4, 
+                    mb: 3,
+                    py: 2,
+                    borderRadius: 3,
+                    fontSize: '1rem',
+                    fontWeight: 600,
+                    background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                    boxShadow: '0 8px 25px rgba(16, 185, 129, 0.3)',
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 12px 35px rgba(16, 185, 129, 0.4)',
+                    },
+                    '&:disabled': {
+                      background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+                      opacity: 0.7,
+                    }
                   }}
                   disabled={loading}
                 >
@@ -354,6 +380,7 @@ const Register = () => {
           </Box>
         </Fade>
       </Container>
+    </Box>
 
       <SuccessMessage
         open={showSuccess}
