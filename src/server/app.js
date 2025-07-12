@@ -12,8 +12,8 @@ import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 
 // Import middleware
-import { errorHandler } from './middleware/errorHandler.js';
-import { notFound } from './middleware/notFound.js';
+import { errorHandler } from './middleware/errorHandler.middleware.js';
+import { notFound } from './middleware/notFound.middleware.js';
 
 // Load environment variables
 dotenv.config();

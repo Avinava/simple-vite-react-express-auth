@@ -1,4 +1,4 @@
-import { AuthService } from '../services/authService.js';
+import { AuthService } from '../services/auth.service.js';
 import { validationResult } from 'express-validator';
 
 export const register = async (req, res, next) => {

@@ -60,11 +60,16 @@ simple-vite-react-express-auth/
 │   ├── server/                # Node.js backend
 │   │   ├── config/           # Configuration files
 │   │   ├── controllers/      # Route handlers
+│   │   │   ├── auth.controller.js
+│   │   │   └── user.controller.js
 │   │   ├── middleware/       # Custom middleware
-│   │   ├── models/           # Database models (Prisma)
+│   │   │   ├── auth.middleware.js
+│   │   │   ├── errorHandler.middleware.js
+│   │   │   └── notFound.middleware.js
 │   │   ├── routes/           # Express routes
 │   │   ├── services/         # Business logic
-│   │   ├── utils/            # Utility functions
+│   │   │   ├── auth.service.js
+│   │   │   └── email.service.js
 │   │   └── app.js            # Express app
 │   │
 │   └── shared/               # Shared utilities (if needed)
@@ -239,6 +244,22 @@ After running `npm run db:seed`, you'll have these test accounts:
 - **Backup Management**: Automatic timestamping and cleanup
 - **Error Handling**: Comprehensive troubleshooting guidance
 - **Confirmation Prompts**: Double confirmation for destructive operations
+
+## 📁 Project Structure & Conventions
+
+### File Naming Conventions
+This project follows consistent naming patterns for better organization:
+
+- **Controllers**: `*.controller.js` (e.g., `auth.controller.js`, `user.controller.js`)
+- **Services**: `*.service.js` (e.g., `auth.service.js`, `email.service.js`)
+- **Middleware**: `*.middleware.js` (e.g., `auth.middleware.js`, `errorHandler.middleware.js`)
+- **Routes**: Standard naming (e.g., `auth.js`, `users.js`)
+
+### Key Points
+- **Single package.json**: Uses only the root-level `package.json` for dependency management
+- **Single Prisma schema**: Database schema is located at `prisma/schema.prisma`
+- **ES Modules**: All server code uses ES module syntax (`import/export`)
+- **Consistent imports**: All file imports reflect the new naming conventions
 
 ## 🛠️ Development Workflow
 
