@@ -9,8 +9,8 @@ import {
   logout,
   verifyEmail,
   getProfile
-} from '../controllers/authController.js';
-import { authenticate } from '../middleware/auth.js';
+} from '../controllers/auth.controller.js';
+import { authenticate } from '../middleware/auth.middleware.js';
 
 const router = express.Router();
 

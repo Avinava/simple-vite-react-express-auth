@@ -1,5 +1,5 @@
 import prisma from '../config/database.js';
-import { AuthService } from '../services/authService.js';
+import { AuthService } from '../services/auth.service.js';
 
 export const getUsers = async (req, res, next) => {
   try {

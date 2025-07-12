@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import crypto from 'crypto';
 import prisma from '../config/database.js';
-import { sendEmail } from './emailService.js';
+import { sendEmail } from './email.service.js';
 
 export class AuthService {
   static async hashPassword(password) {
