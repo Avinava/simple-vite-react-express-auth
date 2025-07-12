@@ -1,49 +1,46 @@
-import React from 'react';
-import { Typography } from '@mui/material';
+import React, { useState, useEffect } from 'react';
 
-const AnimatedCounter = ({ 
-  end, 
-  duration = 2000, 
-  prefix = '', 
-  suffix = '',
-  variant = 'h4',
-  ...props 
-}) => {
-  const [count, setCount] = React.useState(0);
+const AnimatedCounter = ({ end, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
+    // Extract numeric value from string like "10K+" or "99.9%"
+    const numericValue = parseFloat(end.toString().replace(/[^\d.]/g, ''));
+    
+    if (isNaN(numericValue)) {
+      setCount(end);
+      return;
+    }
+
     let startTime;
-    let animationFrame;
-
-    const animate = (timestamp) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
       
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = easeOutQuart * numericValue;
       
-      const currentCount = Math.floor(easeOutQuart * end);
-      setCount(currentCount);
-
+      // Format the number based on the original format
+      if (end.includes('K')) {
+        setCount(Math.floor(currentCount) + 'K+');
+      } else if (end.includes('%')) {
+        setCount(currentCount.toFixed(1) + '%');
+      } else if (end.includes('/')) {
+        setCount(end); // For cases like "24/7"
+      } else {
+        setCount(Math.floor(currentCount) + '+');
+      }
+      
       if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
+        requestAnimationFrame(animate);
       }
     };
-
-    animationFrame = requestAnimationFrame(animate);
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
+    
+    requestAnimationFrame(animate);
   }, [end, duration]);
 
-  return (
-    <Typography variant={variant} {...props}>
-      {prefix}{count.toLocaleString()}{suffix}
-    </Typography>
-  );
+  return count;
 };
 
 export default AnimatedCounter;
