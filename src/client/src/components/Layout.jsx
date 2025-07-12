@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 const Layout = () => {
   const { user, logout } = useAuth();
@@ -39,16 +40,18 @@ const Layout = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1, minHeight: '100vh', bgcolor: 'background.default' }}>
+      <AppBar position="static" sx={{ bgcolor: 'background.paper', color: 'text.primary' }}>
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'text.primary' }}>
             SaaS Starter
           </Typography>
           
-          <Button color="inherit" onClick={() => navigate('/home')}>
+          <Button sx={{ color: 'text.primary' }} onClick={() => navigate('/home')}>
             Home
           </Button>
+          
+          <ThemeToggle size="small" sx={{ ml: 1 }} />
           
           <Box sx={{ ml: 2 }}>
             <IconButton
@@ -57,7 +60,7 @@ const Layout = () => {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleMenu}
-              color="inherit"
+              sx={{ color: 'text.primary' }}
             >
               <Avatar sx={{ width: 32, height: 32 }}>
                 {user?.firstName?.[0]?.toUpperCase() || 'U'}
@@ -85,7 +88,7 @@ const Layout = () => {
         </Toolbar>
       </AppBar>
       
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      <Container maxWidth="lg" sx={{ mt: 4, mb: 4, bgcolor: 'background.default', color: 'text.primary' }}>
         <Outlet />
       </Container>
     </Box>

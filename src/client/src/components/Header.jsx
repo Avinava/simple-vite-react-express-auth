@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Box, Container, alpha, useTheme, C
 import { Rocket, Menu as MenuIcon, Close as CloseIcon, ArrowForward } from "@mui/icons-material";
 import { Link as RouterLink, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const { user } = useAuth();
@@ -24,10 +25,12 @@ const Header = () => {
       position="fixed"
       elevation={0}
       sx={{
-        bgcolor: "rgba(255, 255, 255, 0.95)",
+        bgcolor: alpha(theme.palette.background.paper, 0.95),
         backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(0, 0, 0, 0.08)",
-        boxShadow: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+        borderBottom: `1px solid ${alpha(theme.palette.divider, 0.8)}`,
+        boxShadow: theme.palette.mode === 'dark' 
+          ? "0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px 0 rgba(0, 0, 0, 0.2)"
+          : "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
         borderRadius: "0 0 0px 0px",
       }}
     >
@@ -119,6 +122,7 @@ const Header = () => {
 
           {/* Desktop Auth Buttons */}
           <Box sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 2 }}>
+            <ThemeToggle size="small" />
             {!user ? (
               <>
                 <Button
@@ -188,7 +192,8 @@ const Header = () => {
           </Box>
 
           {/* Mobile Menu Button */}
-          <Box sx={{ display: { xs: "flex", md: "none" } }}>
+          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: "center", gap: 1 }}>
+            <ThemeToggle size="small" />
             <IconButton
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               sx={{
@@ -209,8 +214,8 @@ const Header = () => {
           <Box
             sx={{
               display: { xs: "block", md: "none" },
-              bgcolor: "#ffffff",
-              borderTop: "1px solid rgba(0, 0, 0, 0.08)",
+              bgcolor: "background.paper",
+              borderTop: `1px solid ${alpha(theme.palette.divider, 0.8)}`,
               py: 3,
               px: 2,
             }}

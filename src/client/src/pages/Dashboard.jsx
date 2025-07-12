@@ -39,6 +39,7 @@ import {
 } from '@mui/icons-material';
 import { useAuth } from '../contexts/AuthContext';
 import StatsCard from '../components/StatsCard';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -46,15 +47,15 @@ const Dashboard = () => {
   const [animationDelay, setAnimationDelay] = React.useState(0);
 
   // Mock data for demonstration
-  const stats = [
+  const stats = React.useMemo(() => [
     { 
       title: 'Total Revenue', 
       value: '$12,426', 
       change: '+12.5%', 
       trend: 'up', 
       icon: TrendingUp,
-      color: 'success.main',
-      bgColor: alpha(theme.palette.success.main, 0.1)
+      color: theme.palette.success?.main || '#22c55e',
+      bgColor: alpha(theme.palette.success?.main || '#22c55e', 0.1)
     },
     { 
       title: 'Active Users', 
@@ -62,8 +63,8 @@ const Dashboard = () => {
       change: '+8.2%', 
       trend: 'up', 
       icon: People,
-      color: 'primary.main',
-      bgColor: alpha(theme.palette.primary.main, 0.1)
+      color: theme.palette.primary?.main || '#0ea5e9',
+      bgColor: alpha(theme.palette.primary?.main || '#0ea5e9', 0.1)
     },
     { 
       title: 'Projects', 
@@ -71,8 +72,8 @@ const Dashboard = () => {
       change: '-2.1%', 
       trend: 'down', 
       icon: Assignment,
-      color: 'warning.main',
-      bgColor: alpha(theme.palette.warning.main, 0.1)
+      color: theme.palette.warning?.main || '#f59e0b',
+      bgColor: alpha(theme.palette.warning?.main || '#f59e0b', 0.1)
     },
     { 
       title: 'Notifications', 
@@ -80,10 +81,10 @@ const Dashboard = () => {
       change: '+5.4%', 
       trend: 'up', 
       icon: Notifications,
-      color: 'info.main',
-      bgColor: alpha(theme.palette.info.main, 0.1)
+      color: theme.palette.info?.main || '#0ea5e9',
+      bgColor: alpha(theme.palette.info?.main || '#0ea5e9', 0.1)
     },
-  ];
+  ], [theme]);
 
   const recentActivities = [
     { id: 1, action: 'New user registered', time: '2 minutes ago', icon: People },
@@ -235,7 +236,7 @@ const Dashboard = () => {
                             flexGrow: 1, 
                             height: 8, 
                             borderRadius: 4,
-                            bgcolor: alpha(theme.palette.primary.main, 0.1)
+                            bgcolor: alpha(theme.palette.primary?.main || '#0ea5e9', 0.1)
                           }} 
                         />
                         <Typography variant="body2" fontWeight="bold">85%</Typography>
@@ -255,7 +256,7 @@ const Dashboard = () => {
                             flexGrow: 1, 
                             height: 8, 
                             borderRadius: 4,
-                            bgcolor: alpha(theme.palette.warning.main, 0.1)
+                            bgcolor: alpha(theme.palette.warning?.main || '#f59e0b', 0.1)
                           }} 
                         />
                         <Typography variant="body2" fontWeight="bold">62%</Typography>
@@ -264,7 +265,7 @@ const Dashboard = () => {
                   </Grid>
                   
                   <Grid item xs={12} md={6}>
-                    <Box sx={{ p: 2, bgcolor: alpha(theme.palette.primary.main, 0.05), borderRadius: 2 }}>
+                    <Box sx={{ p: 2, bgcolor: alpha(theme.palette.primary?.main || '#0ea5e9', 0.05), borderRadius: 2 }}>
                       <Typography variant="subtitle2" gutterBottom>Account Details</Typography>
                       <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
                         Email: {user?.email}
@@ -345,7 +346,7 @@ const Dashboard = () => {
                             sx={{
                               p: 1,
                               borderRadius: '50%',
-                              bgcolor: alpha(theme.palette.primary.main, 0.1),
+                              bgcolor: alpha(theme.palette.primary?.main || '#0ea5e9', 0.1),
                               color: 'primary.main',
                             }}
                           >

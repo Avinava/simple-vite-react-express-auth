@@ -257,7 +257,7 @@ const Landing = () => {
       </Box>
 
       {/* Stats Section */}
-      <Box sx={{ py: 6, bgcolor: "grey.50" }}>
+      <Box sx={{ py: 6, bgcolor: "background.default" }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {stats.map((stat, index) => (
@@ -328,7 +328,7 @@ const Landing = () => {
       </Box>
 
       {/* Testimonials Section */}
-      <Box sx={{ py: 8, bgcolor: "grey.50" }}>
+      <Box sx={{ py: 8, bgcolor: "background.default" }}>
         <Container maxWidth="lg">
           <Box textAlign="center" mb={6}>
             <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
@@ -424,7 +424,7 @@ const Landing = () => {
       </Box>
 
       {/* Stats Section */}
-      <Box sx={{ py: 8, bgcolor: "grey.50" }}>
+      <Box sx={{ py: 8, bgcolor: "background.default" }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {stats.map((stat, index) => (
@@ -519,7 +519,7 @@ const Landing = () => {
       </Box>
 
       {/* FAQ Section */}
-      <Box sx={{ py: 8, bgcolor: "grey.50" }}>
+      <Box sx={{ py: 8, bgcolor: "background.default" }}>
         <Container maxWidth="md">
           <Box sx={{ textAlign: "center", mb: 6 }}>
             <Typography variant="h3" fontWeight="bold" gutterBottom>

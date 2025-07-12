@@ -82,7 +82,7 @@ const Login = () => {
       <Box
         sx={{
           minHeight: '100vh',
-          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          bgcolor: 'background.default',
           display: 'flex',
           alignItems: 'center',
           py: 8,
@@ -103,7 +103,7 @@ const Login = () => {
                 padding: 5, 
                 width: '100%',
                 borderRadius: 4,
-                background: '#ffffff',
+                bgcolor: 'background.paper',
                 backdropFilter: 'blur(20px)',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
@@ -226,7 +226,7 @@ const Login = () => {
                     label="or continue with" 
                     size="small" 
                     sx={{ 
-                      bgcolor: 'grey.100',
+                      bgcolor: 'action.hover',
                       color: 'text.secondary',
                       fontWeight: 500,
                     }}

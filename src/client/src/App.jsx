@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Container } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import { useAuth } from './contexts/AuthContext';
 import Layout from './components/Layout';
 import Landing from './pages/Landing';
@@ -21,7 +21,8 @@ function App() {
   }
 
   return (
-    <Routes>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', color: 'text.primary' }}>
+      <Routes>
       {/* Public routes */}
       <Route path="/" element={!user ? <Landing /> : <Navigate to="/home" />} />
       <Route path="/login" element={!user ? <Login /> : <Navigate to="/home" />} />
@@ -39,7 +40,8 @@ function App() {
       
       {/* Catch all */}
       <Route path="*" element={<Navigate to={user ? "/home" : "/"} />} />
-    </Routes>
+      </Routes>
+    </Box>
   );
 }
 
