@@ -88,11 +88,11 @@ const Footer = () => {
                   <Rocket sx={{ fontSize: 24 }} />
                 </Box>
                 <Typography variant="h5" fontWeight="bold">
-                  SaaS Starter
+                  Auth Starter
                 </Typography>
               </Box>
               <Typography variant="body1" color="grey.300" sx={{ mb: 3, maxWidth: 300 }}>
-                Build amazing SaaS applications with our modern, scalable starter kit. 
+                Build amazing web applications with our modern, authentication-ready starter kit. 
                 Everything you need to launch your next big idea.
               </Typography>
               
@@ -101,7 +101,7 @@ const Footer = () => {
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <Email sx={{ fontSize: 16, color: 'grey.400' }} />
                   <Typography variant="body2" color="grey.300">
-                    hello@saasStarter.com
+                    hello@authstarter.com
                   </Typography>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -162,7 +162,7 @@ const Footer = () => {
           }}
         >
           <Typography variant="body2" color="grey.400">
-            Â© {new Date().getFullYear()} SaaS Starter. All rights reserved.
+            © {new Date().getFullYear()} Auth Starter. All rights reserved.
           </Typography>
 
           {/* Social Links */}

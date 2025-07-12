@@ -66,7 +66,7 @@ const HeroSection = () => {
                     mb: 3,
                   }}
                 >
-                  Build Your SaaS
+                  Build Auth-Ready Apps
                   <br />
                   <Box component="span" sx={{ color: theme.palette.warning.main }}>
                     10x Faster
@@ -82,8 +82,8 @@ const HeroSection = () => {
                     lineHeight: 1.4,
                   }}
                 >
-                  Production-ready starter kit with authentication, user management, and modern UI components. 
-                  Start building features, not boilerplate.
+                  Production-ready authentication starter with Vite, React, Express, and PostgreSQL. 
+                  Complete user management system - start building features, not auth boilerplate.
                 </Typography>
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
                   <Button

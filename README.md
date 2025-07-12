@@ -1,8 +1,8 @@
-# 🚀 Simple SaaS Starter Kit
+# 🚀 Simple Vite React Express Auth
 
-A modern, full-stack SaaS starter kit built with Node.js, React, and PostgreSQL. This boilerplate provides a solid foundation for building SaaS applications with authentication, user management, and a beautiful, responsive UI.
+A modern, full-stack authentication starter built with Vite, React, Express, and PostgreSQL. This boilerplate provides a solid foundation for building web applications with complete authentication, user management, and a beautiful, responsive UI.
 
-> **✨ New Features**: Modular landing page components, comprehensive database scripts, and automated setup tools!
+> **✨ Features**: Modular landing page components, comprehensive database scripts, automated setup tools, and production-ready authentication!
 
 ## 🚀 Features
 
@@ -41,7 +41,7 @@ A modern, full-stack SaaS starter kit built with Node.js, React, and PostgreSQL.
 ## 📁 Project Structure
 
 ```
-simple-saas-starter/
+simple-vite-react-express-auth/
 ├── src/
 │   ├── client/                 # React frontend
 │   │   ├── public/            # Static assets
@@ -97,7 +97,7 @@ simple-saas-starter/
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd simple-saas-starter
+cd simple-vite-react-express-auth
 
 # Run automated setup
 npm run setup
@@ -116,7 +116,7 @@ npm run dev
 ```bash
 # Clone and install
 git clone <your-repo-url>
-cd simple-saas-starter
+cd simple-vite-react-express-auth
 npm install
 
 # Environment setup
@@ -227,8 +227,8 @@ After running `npm run db:seed`, you'll have these test accounts:
 
 | Role | Email | Password | Status |
 |------|-------|----------|---------|
-| Super Admin | admin@saasStarter.com | Admin123! | ✅ Verified |
-| Admin | moderator@saasStarter.com | Mod123! | ✅ Verified |
+| Super Admin | admin@authstarter.com | Admin123! | ✅ Verified |
+| Admin | moderator@authstarter.com | Mod123! | ✅ Verified |
 | User | john.doe@example.com | User123! | ✅ Verified |
 | User | jane.smith@example.com | User123! | ✅ Verified |
 | User | sarah.chen@techstart.com | User123! | ✅ Verified |

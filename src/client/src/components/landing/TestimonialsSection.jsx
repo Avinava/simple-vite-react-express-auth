@@ -18,21 +18,21 @@ const testimonials = [
     role: 'CTO, TechStart',
     avatar: 'SC',
     rating: 5,
-    comment: 'This starter kit saved us months of development time. The code quality is exceptional and the architecture is solid.',
+    comment: 'This auth starter saved us months of development time. The authentication system is rock-solid and well-architected.',
   },
   {
     name: 'Mike Rodriguez',
     role: 'Full Stack Developer',
     avatar: 'MR',
     rating: 5,
-    comment: 'Clean architecture, great documentation, and modern best practices. Highly recommended for any SaaS project!',
+    comment: 'Clean architecture, great documentation, and modern best practices. Highly recommended for any web project needing auth!',
   },
   {
     name: 'Emily Johnson',
     role: 'Product Manager',
     avatar: 'EJ',
     rating: 5,
-    comment: 'Perfect foundation for our SaaS product. The UI components are beautiful and responsive across all devices.',
+    comment: 'Perfect foundation for our web app. The authentication flow is seamless and the UI components are beautiful.',
   },
 ];
 
@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
             Loved by Developers
           </Typography>
           <Typography variant="h6" color="text.secondary">
-            Join thousands of developers building amazing SaaS products
+            Join thousands of developers building amazing web applications
           </Typography>
         </Box>
         <Grid container spacing={4}>

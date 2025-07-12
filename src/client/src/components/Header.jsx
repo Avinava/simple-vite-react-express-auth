@@ -79,7 +79,7 @@ const Header = () => {
                   letterSpacing: "-0.02em",
                 }}
               >
-                SaaS Starter
+                Auth Starter
               </Typography>
               <Chip
                 label="Beta"

@@ -4,7 +4,7 @@ import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-console.log('🚀 Setting up SaaS Starter Kit...\n');
+console.log('🚀 Setting up Auth Starter Kit...\n');
 
 // Check if .env exists, if not copy from .env.example
 if (!fs.existsSync('.env')) {

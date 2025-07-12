@@ -1,7 +1,7 @@
 {
   "name": "saas-server",
   "version": "1.0.0",
-  "description": "Backend for SaaS starter kit",
+  "description": "Backend for Auth starter kit",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",

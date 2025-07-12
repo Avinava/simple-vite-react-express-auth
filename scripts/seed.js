@@ -12,7 +12,7 @@ const prisma = new PrismaClient();
 // Sample data
 const sampleUsers = [
   {
-    email: 'admin@saasStarter.com',
+    email: 'admin@authstarter.com',
     password: 'Admin123!',
     firstName: 'Admin',
     lastName: 'User',
@@ -36,7 +36,7 @@ const sampleUsers = [
     emailVerified: true,
   },
   {
-    email: 'moderator@saasStarter.com',
+    email: 'moderator@authstarter.com',
     password: 'Mod123!',
     firstName: 'Moderator',
     lastName: 'User',
@@ -135,8 +135,8 @@ async function displayStats() {
     
     // Display sample login credentials
     console.log('\n🔑 Sample Login Credentials:');
-    console.log('   Super Admin: admin@saasStarter.com / Admin123!');
-    console.log('   Admin: moderator@saasStarter.com / Mod123!');
+    console.log('   Super Admin: admin@authstarter.com / Admin123!');
+    console.log('   Admin: moderator@authstarter.com / Mod123!');
     console.log('   User: john.doe@example.com / User123!');
     console.log('   User: jane.smith@example.com / User123!');
     

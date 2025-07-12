@@ -23,7 +23,7 @@ const features = [
   {
     icon: <RocketLaunch />,
     title: 'Quick Start',
-    description: 'Get your SaaS up and running in minutes with our pre-built authentication and user management.',
+    description: 'Get your app up and running in minutes with pre-built authentication, user management, and modern tooling.',
     color: 'primary.main',
   },
   {
@@ -86,7 +86,7 @@ const FeaturesSection = () => {
             mx="auto"
             sx={{ lineHeight: 1.6 }}
           >
-            A complete foundation for your SaaS application with modern tools and best practices
+            A complete authentication foundation for your web application with modern tools and best practices
           </Typography>
         </Box>
         <Grid container spacing={4}>

@@ -44,7 +44,7 @@ const Layout = () => {
       <AppBar position="static" sx={{ bgcolor: 'background.paper', color: 'text.primary' }}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: 'text.primary' }}>
-            SaaS Starter
+            Auth Starter
           </Typography>
           
           <Button sx={{ color: 'text.primary' }} onClick={() => navigate('/home')}>

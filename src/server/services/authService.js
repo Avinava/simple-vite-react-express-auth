@@ -72,7 +72,7 @@ export class AuthService {
         to: email,
         subject: 'Verify Your Email',
         html: `
-          <h1>Welcome to SaaS Starter!</h1>
+          <h1>Welcome to Auth Starter!</h1>
           <p>Please click the link below to verify your email:</p>
           <a href="${process.env.CLIENT_URL}/verify-email?token=${verificationToken}">
             Verify Email

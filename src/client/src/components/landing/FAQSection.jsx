@@ -14,7 +14,7 @@ import { ExpandMore } from '@mui/icons-material';
 const faqs = [
   {
     question: 'What technologies are included?',
-    answer: 'Our starter kit includes React 18, Node.js, Express, PostgreSQL, Prisma ORM, Material-UI, JWT authentication, and more. Everything is configured with modern best practices.',
+    answer: 'Our auth starter includes Vite, React 18, Express, PostgreSQL, Prisma ORM, Material-UI, JWT authentication, and more. Everything is configured with modern best practices.',
   },
   {
     question: 'Is it suitable for production?',
@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'What about updates?',
-    answer: 'We regularly update the starter kit with new features, security patches, and the latest versions of dependencies to keep your project current.',
+    answer: 'We regularly update the auth starter with new features, security patches, and the latest versions of dependencies to keep your project current.',
   },
   {
     question: 'Is there a money-back guarantee?',

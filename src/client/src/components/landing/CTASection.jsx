@@ -62,7 +62,7 @@ const CTASection = () => {
                 lineHeight: 1.6,
               }}
             >
-              Join thousands of developers who chose our starter kit to build their SaaS products
+              Join thousands of developers who chose our auth starter to build their web applications
             </Typography>
             <Stack 
               direction={{ xs: 'column', sm: 'row' }} 

@@ -1,7 +1,7 @@
 {
-  "name": "simple-saas-starter",
+  "name": "simple-vite-react-express-auth",
   "version": "1.0.0",
-  "description": "A simple SaaS starter kit with React frontend and Node.js backend",
+  "description": "A simple authentication starter with Vite + React frontend and Express backend",
   "type": "module",
   "private": true,
   "scripts": {
