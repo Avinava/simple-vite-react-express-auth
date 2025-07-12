@@ -15,8 +15,17 @@
     "test:watch": "jest --watch",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
-    "db:migrate": "prisma migrate dev",
-    "db:studio": "prisma studio"
+    "db:migrate": "node scripts/db-migrate.js",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:reset": "prisma migrate reset",
+    "db:migrate:status": "prisma migrate status",
+    "db:studio": "prisma studio",
+    "db:setup": "node scripts/db-setup.js",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "node scripts/db-reset.js",
+    "db:backup": "node scripts/db-backup.js",
+    "db:restore": "node scripts/db-restore.js",
+    "setup": "node scripts/setup.js"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
