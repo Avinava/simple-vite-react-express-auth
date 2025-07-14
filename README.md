@@ -1,3 +1,11 @@
+<!-- Screenshot -->
+<p align="center">
+  <img src="screenshots/Landing.png" alt="Landing Page Screenshot" width="800"/>
+</p>
+<p align="center">
+  <img src="screenshots/Login-Signup.png" alt="Login & Signup Screenshot" width="800"/>
+</p>
+
 # 🚀 Simple Vite React Express Auth
 
 A modern, full-stack authentication starter built with Vite, React, Express, and PostgreSQL. This boilerplate provides a solid foundation for building web applications with complete authentication, user management, and a beautiful, responsive UI.
